@@ -21,26 +21,36 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Container de fundo com a imagem */
+/* Bloco novo - A SOLUÇÃO CORRETA */
 .background-container {
+    position: relative; /* Essencial para o posicionamento do fundo */
+    height: 100vh;
+    border-bottom: 8px solid #222;
+    display: flex; /* Adicionado para ajudar na centralização do conteúdo */
+    flex-direction: column; /* Organiza header e main em coluna */
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Coloca o fundo atrás do conteúdo */
+
+    /* O fundo e o filtro agora ficam aqui */
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.9) 100%), url('images/image.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    border-bottom: 8px solid #222;
     filter: grayscale(100%);
 }
-
 /* Cabeçalho e Logo */
 .header {
     padding: 20px 50px;
 }
 
-.logo {
-    color: #FFA500;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
+/* Ícone NETFLUXO */
 
 /* Container do Formulário de Login */
 .login-container {
