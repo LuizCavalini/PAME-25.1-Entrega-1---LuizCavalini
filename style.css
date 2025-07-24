@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
+    padding-bottom: 200px; 
 }
 
 a {
@@ -25,7 +26,7 @@ a:hover {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.9) 100%), url('images/image.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Altura total da tela */
+    height: 100vh;
     border-bottom: 8px solid #222;
     filter: grayscale(100%);
 }
@@ -46,7 +47,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 150px); /* Ajusta a altura para centralizar */
+    height: calc(100vh - 150px);
 }
 
 .login-box {
@@ -57,13 +58,16 @@ a:hover {
     max-width: 450px;
 }
 
+/* MELHORIA: Usando Flexbox para espaçamento */
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+}
+
 .login-box h2 {
     font-size: 2rem;
     margin-bottom: 28px;
-}
-
-.input-group {
-    margin-bottom: 16px;
 }
 
 .input-group input {
@@ -76,7 +80,13 @@ a:hover {
     font-size: 1rem;
 }
 
-.btn-login {
+/* MELHORIA: Estilo de foco para os inputs */
+.input-group input:focus {
+    outline: 2px solid #FFA500;
+}
+
+/* MELHORIA: Trocado para ID e margens removidas */
+#btn-login {
     width: 100%;
     padding: 16px;
     border: none;
@@ -86,8 +96,6 @@ a:hover {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 24px;
-    margin-bottom: 12px;
 }
 
 .login-help a {
@@ -97,11 +105,24 @@ a:hover {
     display: block;
 }
 
+/* MELHORIA: Estilo para botão secundário */
+.btn-secondary {
+    background-color: rgba(117, 117, 117, 0.4); /* Cinza com transparência */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #757575;
+}
+.btn-secondary:hover {
+    background-color: rgba(117, 117, 117, 0.6);
+    text-decoration: none;
+}
+
 .login-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
     font-size: 0.8rem;
     color: #b3b3b3;
 }
@@ -111,7 +132,7 @@ a:hover {
 }
 
 .signup {
-    margin-top: 40px;
+    margin-top: 24px; 
     color: #737373;
 }
 
@@ -120,10 +141,6 @@ a:hover {
 }
 
 /* Rodapé */
-body {
-    padding-bottom: 200px; 
-}
-
 .footer {
     padding: 70px 15%;
     color: #757575;
